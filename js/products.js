@@ -35,6 +35,7 @@ const app = createApp({
       axios.delete(`${this.api.baseUrl}/v2/api/${this.api.path}/admin/product/${id}`)
         .then(res => {
           this.getProductsData();
+          this.temp = {};
         }).catch(err => {
           console.dir(err);
         }).then(res => {
