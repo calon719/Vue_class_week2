@@ -23,7 +23,7 @@ const app = createApp({
         }).catch(err => {
           alert(err.data.message);
           document.cookie = "myToken=;expires=" + (new Date(0)).toGMTString();
-          location.href = './../index.html';
+          location.href = './index.html';
         }).then(res => {
           this.isLoading = false;
         });
