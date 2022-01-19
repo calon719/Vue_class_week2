@@ -23,7 +23,6 @@ const app = createApp({
 
       axios.post(`${this.api.apiUrl}/${this.api.check_path}`)
         .then(res => {
-          this.isError = false;
           location.href = './products.html';
         }).catch(err => {
           console.dir(err)
@@ -34,6 +33,7 @@ const app = createApp({
 
       axios.post(`${this.api.apiUrl}/${this.api.signin_path}`, this.user)
         .then(res => {
+          this.isError = false;
           const { token, expired } = res.data;
           document.cookie = `myToken=${token}; expires=${new Date(expired)};`;
           location.href = './products.html';
